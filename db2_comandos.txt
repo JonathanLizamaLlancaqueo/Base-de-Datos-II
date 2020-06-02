@@ -1,0 +1,198 @@
+Item 4: 
+use datos;
+db.createCollection(“contador”);
+db.createCollection(“usuario”);
+
+Item 5:
+Los datos fueron insertados de manera separada.
+
+db.usuario.insert(
+{
+	_id: getNextSequenceValue("productid"),
+	nombre: 'Esteban Llanos',
+	sexo: 'VAR',
+	pais: 'Chile',
+	edad: 24,
+	fecha_nacimiento: '13/12/1995',
+	rut: '19231805-K',
+	redes_sociales:[
+		{
+			nombre: 'Facebook',
+			nickname: 'Llanos_ilimitado',
+			password: 'me_gusta_el_chachacha',
+			email: 'superLlanos@gmail.com',
+			contactos: [
+				'Jonathan_Llanos'
+			],
+			likes: [
+				'Huevito Dios universal'
+			]
+		},
+		
+		{
+			nombre: 'Instagram',
+			nickname: 'Llanos2',
+			password: 'abcd1234',
+			email: 'superLlanos@gmail.com',
+			contactos: [
+				'maca.gr8',
+				'ferr.ss'
+			],
+			likes: [
+				'Los turururu',
+				'31 minutos'
+			]
+		}
+		
+	]	
+});
+
+
+db.usuario.insert(
+{
+	_id: getNextSequenceValue("productid"),
+	nombre: 'Jonathan Lizama',
+	sexo: 'VAR',
+	pais: 'Chile',
+	edad: 23,
+	fecha_nacimiento: '22/09/1996',
+	rut: '192851971',
+	redes_sociales:[
+		{
+			nombre: 'Linkedin',
+			nickname: 'Jonathan_Lizama',
+			password: 'jona1996asjs',
+			email: 'lizama.06@gmail.com',
+			contactos: [
+				'Alex Muñoz',
+				'Tamara Lopez'
+			],
+			likes: [
+				'Tamara Lopez',
+				'Cosmos'
+			]
+		},
+		
+		{
+			nombre: 'Instagram',
+			nickname: 'LizamaJonathan',
+			password: 'abcABC12345',
+			email: 'lizama.06@gmail.com',
+			contactos: [
+				'iammacarena',
+				'tamara_andreasm',
+				'blackstar.dvj'
+			],
+			likes: [
+				'Cosmos',
+				'31 minutos',
+				'Udemy'
+			]
+		}
+		
+	]	
+});
+
+
+db.usuario.insert(
+{
+	_id: getNextSequenceValue("productid"),
+	nombre: 'Jonathan Llanos',
+	sexo: 'VAR',
+	pais: 'Chile',
+	edad: 25,
+	fecha_nacimiento: '20/09/1995',
+	rut: '18233855-5',
+	redes_sociales:[
+		{
+			nombre: 'Facebook',
+			nickname: 'Jonathan_Llanos',
+			password: 'mis_pezones_rosaditos123',
+			email: 'Jonathanx_del_flow@gmail.com',
+			contactos: [
+				'Llanos_ilimitado'
+			],
+			likes: [
+				'Frases inspiradoras'
+			]
+		},
+		
+		{
+			nombre: 'Instagram',
+			nickname: 'Llanos_extreme',
+			password: 'me_muevo_con_fe',
+			email: 'Jonathanx_del_flow@gmail.com',
+			contactos: [
+				'ferr.ss'
+			],
+			likes: [
+				'Culto_a_alex_muñoz',
+				'Corxea'
+			]
+		}
+		
+	]	
+});
+
+Item 6:
+
+db.usuario.update(
+	{ _id: 1 },
+	{ $set:{'redes_sociales.0.tipo_acceso': 'pc personal'} }
+);
+
+db.usuario.update(
+	{ _id: 2 },
+	{ $set:{'redes_sociales.1.tipo_acceso': 'telefono'} }
+);
+
+db.usuario.update(
+	{ _id: 3 },
+	{ $set:{'redes_sociales.1.tipo_acceso': 'telefono'} }
+);
+
+
+Item 7:
+
+db.usuario.find({redes_sociales:{$elemMatch:{tipo_acceso:"telefono"}}},{"redes_sociales.$":1,"nombre":1,"_id":0}).pretty();
+
+
+Item 8:
+
+db.usuario.updateOne(
+	{},
+	{$set: {"Comentario":"Este sujeto es hacker"}}
+)
+
+
+
+Item 9:
+
+db.usuario.deleteMany({redes_sociales:{$elemMatch:{nombre:"Facebook"}}});
+
+
+
+Item 10:
+
+db.usuario.createIndex({nombre : 1});
+
+Busqueda SIN INDICE: 
+db.usuario.find({"edad": 23.0}).explain("executionStats").executionStats.executionTimeMillis
+
+Busqueda CON INDICE:
+db.usuario.find({"nombre": "Jonathan Lizama"}).explain("executionStats").executionStats.executionTimeMillis
+
+
+Item 11:
+
+db.usuario.updateMany(
+	{"fecha_nacimiento":{$regex:"/04/"}},
+	{$set:{"edad":30}}
+)
+
+
+Item 12:
+
+db.usuario.update({"redes_sociales.email":"lizama06@gmail.com"},{$unset:{"rut":""}});
+
+db.usuario.find({"nombre":"Jonathan Lizama"}).pretty();

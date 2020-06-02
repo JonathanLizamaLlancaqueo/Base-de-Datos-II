@@ -1,0 +1,118 @@
+{ 
+    "_id" : "productid", 
+    "sequence_value" : 3.0
+}
+{ 
+    "_id" : 1.0, 
+    "nombre" : "Esteban Llanos", 
+    "sexo" : "VAR", 
+    "pais" : "Chile", 
+    "edad" : 24.0, 
+    "fecha_nacimiento" : "13/12/1995", 
+    "rut" : "19231805-K", 
+    "redes_sociales" : [
+        {
+            "nombre" : "Facebook", 
+            "nickname" : "Llanos_ilimitado", 
+            "password" : "me_gusta_el_chachacha", 
+            "email" : "superLlanos@gmail.com", 
+            "contactos" : [
+                "Jonathan_Llanos"
+            ], 
+            "likes" : [
+                "Huevito Dios universal"
+            ]
+        }, 
+        {
+            "nombre" : "Instagram", 
+            "nickname" : "Llanos2", 
+            "password" : "abcd1234", 
+            "email" : "superLlanos@gmail.com", 
+            "contactos" : [
+                "maca.gr8", 
+                "ferr.ss"
+            ], 
+            "likes" : [
+                "Los turururu", 
+                "31 minutos"
+            ]
+        }
+    ]
+}
+{ 
+    "_id" : 2.0, 
+    "nombre" : "Jonathan Lizama", 
+    "sexo" : "VAR", 
+    "pais" : "Chile", 
+    "edad" : 23.0, 
+    "fecha_nacimiento" : "22/09/1996", 
+    "rut" : "192851971", 
+    "redes_sociales" : [
+        {
+            "nombre" : "Linkedin", 
+            "nickname" : "Jonathan_Lizama", 
+            "password" : "jona1996asjs", 
+            "email" : "lizama.06@gmail.com", 
+            "contactos" : [
+                "Alex Muñoz", 
+                "Tamara Lopez"
+            ], 
+            "likes" : [
+                "Tamara Lopez", 
+                "Cosmos"
+            ]
+        }, 
+        {
+            "nombre" : "Instagram", 
+            "nickname" : "LizamaJonathan", 
+            "password" : "abcABC12345", 
+            "email" : "lizama.06@gmail.com", 
+            "contactos" : [
+                "iammacarena", 
+                "tamara_andreasm", 
+                "blackstar.dvj"
+            ], 
+            "likes" : [
+                "Cosmos", 
+                "31 minutos", 
+                "Udemy"
+            ]
+        }
+    ]
+}
+{ 
+    "_id" : 3.0, 
+    "nombre" : "Jonathan Llanos", 
+    "sexo" : "VAR", 
+    "pais" : "Chile", 
+    "edad" : 25.0, 
+    "fecha_nacimiento" : "20/09/1994", 
+    "rut" : "18233855-5", 
+    "redes_sociales" : [
+        {
+            "nombre" : "Facebook", 
+            "nickname" : "Jonathan_Llanos", 
+            "password" : "mis_pezones_rosaditos123", 
+            "email" : "Jonathanx_del_flow@gmail.com", 
+            "contactos" : [
+                "Llanos_ilimitado"
+            ], 
+            "likes" : [
+                "Frases inspiradoras"
+            ]
+        }, 
+        {
+            "nombre" : "Instagram", 
+            "nickname" : "Llanos_extreme", 
+            "password" : "me_muevo_con_fe", 
+            "email" : "Jonathanx_del_flow@gmail.com", 
+            "contactos" : [
+                "ferr.ss"
+            ], 
+            "likes" : [
+                "Culto_a_alex_muñoz", 
+                "Corxea"
+            ]
+        }
+    ]
+}
